@@ -31,7 +31,7 @@ include_directories( ${Boost_INCLUDE_DIR} )
 # NOTE: Ideally we would like to 'find' these packages but for now, we assume they are either
 # in /usr/lib or /usr/local/lib
 #link_libraries(amino ntcan protobuf-c ach somatic stdc++ filter pcio pthread ncurses dart fcl tinyxml tinyxml2 kore assimp GL)
-link_libraries(stdc++ krach)
+link_libraries(stdc++ amino protobuf-c ach somatic)
 
 # ====================================================================================
 # Build the codebase library and the executables
@@ -45,9 +45,15 @@ configure_file(python/example.py example.py COPYONLY)
 configure_file(python/reset_example.py reset_example.py COPYONLY)
 configure_file(python/control_motor.py control_motor.py COPYONLY)
 
+# Collect the source, script and fortran files
+file(GLOB main_source "src/krach.cpp")
+
+# Build the library and set the executables that use it (have to hardcode for now)
+add_library(pykrachcpp SHARED ${main_source})
+
 # Define the wrapper library that wraps our library
 add_library(pykrach SHARED "src/krach_ext.cpp")
-target_link_libraries(pykrach ${Boost_LIBRARIES} krach)
+target_link_libraries(pykrach ${Boost_LIBRARIES} pykrachcpp)
 # don't prepend wrapper library name with lib
 set_target_properties(pykrach PROPERTIES PREFIX "" )
 

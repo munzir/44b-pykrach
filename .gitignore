@@ -4,8 +4,15 @@
 !CMakeLists.txt
 !README.md
 
+!/include/
+/include/*
+!/include/pykrach/
+/include/pykrach/*
+!/include/pykrach/krach.h
+
 !/src/
 /src/*
+!/src/krach.cpp
 !/src/krach_ext.cpp
 
 !/python/
