@@ -1,8 +1,10 @@
 /*
 
 !.gitignore
-!CMakeLists.txt
+
 !README.md
+
+!CMakeLists.txt
 
 !/include/
 /include/*
