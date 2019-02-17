@@ -43,7 +43,7 @@
 
 #include <boost/python.hpp>
 #include <boost/python/suite/indexing/vector_indexing_suite.hpp>
-#include <krach/krach.h>
+#include "pykrach/krach.h"
 
 BOOST_PYTHON_MODULE(pykrach) {
   namespace py = boost::python;
