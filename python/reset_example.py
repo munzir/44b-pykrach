@@ -1,4 +1,4 @@
-from pykrang import *
+from pykrach import *
 if_cx = InterfaceContext('reset_example-py')
 world = WorldInterface(if_cx, 'sim-cmd', 'sim-state')
 reset_pose = {
