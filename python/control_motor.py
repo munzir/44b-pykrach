@@ -1,12 +1,12 @@
-import pykrang
+import pykrach
 import numpy
 
 def str(x):
     return ["{0:3.3f}".format(i) for i in x]
 
-interface_context = pykrang.InterfaceContext('pykrang')
+interface_context = pykrach.InterfaceContext('pykrach')
 
-left_arm = pykrang.MotorInterface(interface_context, 'left-arm', 'llwa-cmd', 'llwa-state', 7)
+left_arm = pykrach.MotorInterface(interface_context, 'left-arm', 'llwa-cmd', 'llwa-state', 7)
 
 left_arm.UpdateState()
 

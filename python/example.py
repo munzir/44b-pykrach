@@ -1,5 +1,5 @@
 import sys
-import pykrang
+import pykrach
 import time
 from math import *
 
@@ -8,22 +8,22 @@ def str(x):
 
 
 print 'creating interface context'
-interface_context = pykrang.InterfaceContext('pykrang')
+interface_context = pykrach.InterfaceContext('pykrach')
 print 'creating world interface'
-world = pykrang.WorldInterface(interface_context, 'sim-cmd', 'sim-state')
+world = pykrach.WorldInterface(interface_context, 'sim-cmd', 'sim-state')
 print 'creating imu interface'
-imu = pykrang.FloatingBaseStateSensorInterface(interface_context, 'imu-data')
+imu = pykrach.FloatingBaseStateSensorInterface(interface_context, 'imu-data')
 print 'creating wheels interface'
-wheels = pykrang.MotorInterface(interface_context, 'wheels', 'amc-cmd',
+wheels = pykrach.MotorInterface(interface_context, 'wheels', 'amc-cmd',
                                 'amc-state', 2)
 print 'creating torso interface'
-torso = pykrang.MotorInterface(interface_context, 'torso', 'torso-cmd',
+torso = pykrach.MotorInterface(interface_context, 'torso', 'torso-cmd',
                                'torso-state', 1)
 print 'creating left_arm interface'
-left_arm = pykrang.MotorInterface(interface_context, 'left-arm', 'llwa-cmd',
+left_arm = pykrach.MotorInterface(interface_context, 'left-arm', 'llwa-cmd',
                                   'llwa-state', 7)
 print 'creating right_arm interface'
-right_arm = pykrang.MotorInterface(interface_context, 'right-arm', 'rlwa-cmd',
+right_arm = pykrach.MotorInterface(interface_context, 'right-arm', 'rlwa-cmd',
                                    'rlwa-state', 7)
 
 iter = 0

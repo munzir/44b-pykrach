@@ -34,17 +34,18 @@
  */
 
 /**
- * @file ach_interface_ext.cpp
+ * @file krach_ext.cpp
  * @author Munzir Zafar
- * @date Dec 5, 2018
+ * @date-created Dec 5, 2018
+ * @date-modified Feb 17, 2018
  * @brief Python module to interface with krang simulation
  */
 
 #include <boost/python.hpp>
 #include <boost/python/suite/indexing/vector_indexing_suite.hpp>
-#include "pykrang/ach_interface.h"
+#include <krach/krach.h>
 
-BOOST_PYTHON_MODULE(pykrang) {
+BOOST_PYTHON_MODULE(pykrach) {
   namespace py = boost::python;
 
   py::class_<std::vector<double>>("VectorOfDoubles")
